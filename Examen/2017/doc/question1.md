@@ -1,6 +1,6 @@
 # Question 1
 
-## Code de la classe POrtefeuille 
+## Code de la classe Portefeuille 
 
 ```Java
 package examen.question1;
