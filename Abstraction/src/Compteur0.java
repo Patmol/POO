@@ -1,6 +1,8 @@
 /**
  * @overview Permet d'incrémenter et de décrémenter un compteur. 
- *  Le compteur est initialiser à 0. Il ne peut pas être décrémenté en deça de 0. 
+ *  Le compteur est initialiser à 0. Il ne peut pas être décrémenté en deça de 0.
+ * @specfield int value 
+ * @invariant La valeur du compteur ne descend jamais en deça de 0.
  */
 public class Compteur0 {
     private int valeur;
