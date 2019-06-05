@@ -37,6 +37,14 @@ public class Portefeuille implements Iterable<EStock> {
         this.stocks = new ArrayList<EStock>();
     }
 
+    public Portefeuille(Portefeuille portefeuille) {
+        this.porteur = portefeuille.porteur;
+
+        for (EStock stock : portefeuille.stocks) {
+            this.stocks.ajouterEStock(new EStock(stock.donneCode(), stock.donneId()));
+        }
+    }
+
     /**
      * @modifies this
      * @effects this_post.stock = this.stock U { stock } 
@@ -100,13 +108,7 @@ public class Portefeuille implements Iterable<EStock> {
 
     @Override
     public Portefeuille clone() {
-        Portefeuille portefeuille = new Portefeuille(this.porteur);
-
-        for (EStock stock : strocks) {
-            portefeuille.ajouterEStock(new EStock(stock.donneCode(), stock.donneId()));
-        }
-
-        return portefeuille;
+        return new Portefeuille(this);
     }
 
     public boolean repOK() {
