@@ -137,3 +137,6 @@ public class Portefeuille implements Iterable<EStock> {
 ## Justification des implémentations
 
 La classe étant une classe mutable, nous sommes obligé de réimplémenter les méthodes toString() et clone(). 
+De la même façon, le constructeur par copie est lui aussi réimplémenté car il s'agit d'une classe mutable.
+
+Dans le constructeur par copie, le porteur est directement assigné (sans _deep copy_) car considéré comme immutable.
