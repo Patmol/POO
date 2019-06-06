@@ -38,3 +38,42 @@ public class Employee extends Person {
         this.departement = departement;
     }
 }
+
+// Exemple 3a
+public class T1 {
+    public T() {
+        /* ... */
+    }
+}
+
+public class S1 extends T1 {
+    public S() {
+        /* Si on ne spécifie pas super(), 
+            Java utilise automatiquement le constructeur parent sans paramèter */
+    }
+}
+
+// Exemple 3b
+public class T2 {
+    /* Si aucun constructeur n'est présent, le constructeur sans paramètre est
+     automatiquement créé */
+}
+
+public class S2 extends T2 {
+    public S2() {
+        super(); // Valide 
+    }
+}
+
+// Exemple 3c
+public class T3 {
+    public T(int a) {} 
+}
+
+public class S3 extends T3 {
+    public S() {
+        /* Pas valide, le constructeur parent n'a pas de constructeur par défault
+        Il faut donc spécifier quel constructeur on utilise (ici il n'y en a qu'un de disponible) */
+        super(5);
+    }
+}
